@@ -1,17 +1,21 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
     <persistence-unit name="hello">
-        <class>example.Member</class>
-        <class>example.Parent</class>
-        <class>example.Child</class>
+        <class>example.domain.Member</class>
+        <class>example.domain.Parent</class>
+        <class>example.domain.Child</class>
+        <class>example.domain.Order</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
             <property name="jakarta.persistence.jdbc.user" value="sa"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.type" value="trace"/> <!-- 🔥 핵심 -->
         </properties>
     </persistence-unit>
 

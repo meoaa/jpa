@@ -1,5 +1,7 @@
 package example;
 
+import example.domain.Child;
+import example.domain.Parent;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
